@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Motos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #111;
+            color: #fff;
+            padding: 16px 30px;
+            margin-bottom: 20px;
+        }
+        header h1 { margin: 0; font-size: 1.6rem; }
+        header p  { margin: 4px 0 0; font-size: 0.9rem; color: #aaa; }
+        #btn-sair {
+            background: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #btn-sair:hover { background: #e65c00; }
+        #usuario-logado { font-size: 13px; color: #ccc; margin-right: 12px; }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho com info do usuário logado -->
+    <header>
+        <div>
+            <h1>🏍️ Speed Motors</h1>
+            <p>Encontre a moto ideal para você</p>
+        </div>
+        <div style="display:flex; align-items:center;">
+            <span id="usuario-logado"></span>
+            <button id="btn-sair" onclick="sair()">Sair</button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtm3JaHcKscET_oN1n6ywYJg0R969O2eY15A&s" alt="Honda CB 500F">
+            <div class="conteudo">
+                <h2>Honda CB 500F</h2>
+                <p>Motor 500cc, ABS, modelo 2024.</p>
+                <span class="preco">R$ 39.900</span>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.ifY58lTfJsfA3i6sx4HWJQHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Yamaha MT-07">
+            <div class="conteudo">
+                <h2>Yamaha MT-07</h2>
+                <p>Motor 689cc, naked esportiva.</p>
+                <span class="preco">R$ 47.990</span>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.r36ZbBCrmWB28MUCTFR_vgHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="S1000rr">
+            <div class="conteudo">
+                <h2>Bmw S1000rr</h2>
+                <p>Motor 1000cc, alta performance.</p>
+                <span class="preco">R$ 110.499</span>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Protege a página: redireciona se não estiver logado
+        verificarSessao();
+
+        // Exibe o e-mail do usuário logado no cabeçalho
+        const email = localStorage.getItem("usuarioLogado");
+        if (email) {
+            document.getElementById("usuario-logado").textContent = `Olá, ${email}`;
+        }
+    </script>
+
+</body>
+</html>

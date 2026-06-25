@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Tela de Login</title>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>🏍️ Speed Motors</h1>
+        <hr>
+
+        <!-- Campo de E-mail -->
+        <div class="input-group">
+            <input
+                type="email"
+                id="Email"
+                name="Email"
+                required
+                placeholder="Insira seu e-mail"
+                class="Email"
+                autocomplete="email"
+            >
+            <label for="Email">E-mail</label>
+        </div>
+
+        <!-- Campo de Senha -->
+        <div class="input-group">
+            <input
+                type="password"
+                id="Senha"
+                name="Senha"
+                required
+                placeholder="Mínimo 8 caracteres"
+                class="Senha"
+                autocomplete="current-password"
+            >
+            <label for="Senha">Senha</label>
+        </div>
+
+        <!-- Botão de Login -->
+        <button class="btn-acessar" onclick="fazerLogin()">
+            Acessar
+        </button>
+
+        <!-- Divisor -->
+        <p style="margin: 16px 0 8px; color: #888; font-size: 13px;">
+            Ainda não tem conta?
+        </p>
+
+        <!-- Botão de Cadastro -->
+        <button class="btn-cadastrar" onclick="cadastrar()">
+            Criar conta
+        </button>
+    </div>
+
+    <!-- Importa o arquivo com toda a lógica JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
